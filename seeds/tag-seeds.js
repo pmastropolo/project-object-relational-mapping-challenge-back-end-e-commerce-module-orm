@@ -12,7 +12,7 @@ const tagData = [
     tag_name: 'blue',
   },
   {
-    tag_name: 'red',01
+    tag_name: 'red',
   },
   {
     tag_name: 'green',
@@ -30,4 +30,4 @@ const tagData = [
 
 const seedTags = () => Tag.bulkCreate(tagData);   // FUNCTION BULK CREATE
 
-module.exports = seedTags;       // EXPORT FUNCTION47.              
+module.exports = seedTags;       // EXPORT FUNCTION            

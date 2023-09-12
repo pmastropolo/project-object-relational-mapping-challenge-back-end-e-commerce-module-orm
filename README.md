@@ -5,156 +5,9 @@
 
 ## Description
 
-Built the back end for an e-commerce site, featuring, a working Express.js API and configure it to use Sequelize to interact with a MySQL database. I was provided with starter code (I have provided a screen shot and a link to the strater code.)
+A back-end for an e-commerce platform using Express.js API, Sequelize, and MySQL. Using Express.js, for route handling. Using Sequelize, a promise-based ORM ('Object Relational Mapper') for database management with MySql. Using MySQL, as the preferred database system for storing essential e-commerce data. Using Insominia for testing to ensure each API route responds as necessary. The API supports CRUD operations on product categories, products, and tags. I was provided with starter code (I have provided a screen shot and a link to the starter code.)
 
-GIVEN a functional Express.js API
-WHEN I add my database name, MySQL username, and MySQL password to an environment variable file
-THEN I am able to connect to a database using Sequelize
-WHEN I enter schema and seed commands
-THEN a development database is created and is seeded with test data
-WHEN I enter the command to invoke the application
-THEN my server is started and the Sequelize models are synced to the MySQL database
-WHEN I open API GET routes in Insomnia Core for categories, products, or tags
-THEN the data for each of these routes is displayed in a formatted JSON
-WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
-THEN I am able to successfully create, update, and delete data in my database
-
-The first animation shows GET routes to return all categories, all products, and all tags being tested in Insomnia Core:
-
-The second animation shows GET routes to return a single category, a single product, and a single tag being tested in Insomnia Core:
-
-The final animation shows the POST, PUT, and DELETE routes for categories being tested in Insomnia Core:
-
-You’ll need to use the MySQL2Links and Sequelize packages to connect your Express.js API to a MySQL database and the dotenv packageLinks to an external site. to use environment variables to store sensitive data, like your MySQL username, password, and database name.
-
-Use the schema.sql file in the db folder to create your database using MySQL shell commands. Use environment variables to store sensitive data, like your MySQL username, password, and database name.
-
-Database Models
-Your database should contain the following four models, including the requirements listed for each model:
-
-Category
-
-id
-
-Integer
-
-Doesn't allow null values
-
-Set as primary key
-
-Uses auto increment
-
-category_name
-
-String
-
-Doesn't allow null values
-
-Product
-
-id
-
-Integer
-
-Doesn't allow null values
-
-Set as primary key
-
-Uses auto increment
-
-product_name
-
-String
-
-Doesn't allow null values
-
-price
-
-Decimal
-
-Doesn't allow null values
-
-Validates that the value is a decimal
-
-stock
-
-Integer
-
-Doesn't allow null values
-
-Set a default value of 10
-
-Validates that the value is numeric
-
-category_id
-
-Integer
-
-References the category model's id
-
-Tag
-
-id
-
-Integer
-
-Doesn't allow null values
-
-Set as primary key
-
-Uses auto increment
-
-tag_name
-
-String
-
-ProductTag
-
-id
-
-Integer
-
-Doesn't allow null values
-
-Set as primary key
-
-Uses auto increment
-
-product_id
-
-Integer
-
-References the product model's id
-
-tag_id
-
-Integer
-
-References the tag model's id
-
-Associations
-You'll need to execute association methods on your Sequelize models to create the following relationships between them:
-
-Product belongs to Category, as a category can have multiple products but a product can only belong to one category.
-
-Category has many Product models.
-
-Product belongs to many Tag models. Using the ProductTag through model, allow products to have multiple tags and tags to have many products.
-
-Tag belongs to many Product models.
-
-Make sure you set up foreign key relationships that match the column we created in the respective models.
-
-Fill Out the API Routes to Perform RESTful CRUD Operations
-Fill out the unfinished routes in product-routes.js, tag-routes.js, and category-routes.js to perform create, read, update, and delete operations using your Sequelize models.
-
-Be sure to look at your module project's code for syntax help and use your model's column definitions to figure out what req.body will be for POST and PUT routes!
-
-Seed the Database
-After creating the models and routes, run npm run seed to seed data to your database so that you can test your routes.
-
-Sync Sequelize to the Database on Server Start
-Create the code needed in server.js to sync the Sequelize models to the MySQL database on server start.
+Users can easily fetch e-commerce data in a formatted JSON via GET routes for categories, products, or tags. API supports POST (data creation), PUT (data update), and DELETE (data removal) operations, allowing users to have full control over their e-commerce data. Begining this project, I had to make sure I had all correct dependencies installed by using the command npm install. For security, there is an '.env' configuration, allowing users to securely connect to their databases.
 
 ## Table of Contents
 
@@ -164,6 +17,7 @@ Create the code needed in server.js to sync the Sequelize models to the MySQL da
 - [Links](#links)
 - [School Instructions](#school-instructions)
 - [Dependencies](#dependencies)
+- [Insomnia](#insomnia)
 - [Dotenv](#dotenv)
 - [ORM](#orm)
 - [mysql](#mysql)
@@ -184,6 +38,24 @@ Create the code needed in server.js to sync the Sequelize models to the MySQL da
 ## Installation
 
 :arrow_down:
+
+Start application:
+
+Run with command;
+npm start
+
+Seed Database: (Optional)
+If you want to populate the database with sample data, run the command:
+
+npm run seed
+
+When running this command, it will:
+
+- Connect to database using Sequelize.
+- Run seed files (which insert data into database tables)
+- Close connection after seeding.
+
+The seed file uses Sequelizes method '.bulkCreate()', to insert multiple records into database.
 
 :arrow_forward: [Starter Code Link: Click Me To Go To Link](https://github.com/coding-boot-camp/fantastic-umbrella)
 
@@ -232,12 +104,68 @@ npm install dotenv
 Want to install all at once?
 npm install express sequelize mysql2 dotenv
 
+## Insomnia
+
+Using Insomnia for testing:
+
+1. Download and install Insomnia at there website:
+[insomnia](https://insomnia.rest/)
+
+2. Create a new request:
+Click on new request
+Name Request
+Select the appropriate HTTP method (GET, POST, PUT, DELETE, etc.).
+Input your API endpoint URL.
+
+3. Sending Requests:
+For GET requests, simply click Send after inputting the URL.
+
+4. Viewing Responses:
+After sending a request,
+the response will display in the right pane of Insomnia.
+Shows: status code, response time, and returned data.
+
+5. Testing Various Endpoints:
+Test all endpoints like categories, products, and tags.
+Adjust HTTP method and input data as necessary for each endpoint.
+
+Images:
+
+![Insomnia](images/insomnia.rest.jpg)
+
 ## dotenv
+
+How to create an '.env' file with npm dotenv?
+
+1. Install 'dotenv' dependency with command:
+npm install dotenv
+
+2. Create '.env' file in root of project directory.
+Create a new file named '.env'
+
+3. Add enviroment variables, Edit '.env' file:
+DB_NAME=''
+DB_USER=''
+DB_PASSWORD=''
+
+4. Configure application to use 'dotenv'
+require('dotenv').config()
+
+5. Protect '.env' file
+In '.gitignore' file, add:
+.env
+
+Links:
 
 - [dotenv npm](https://www.npmjs.com/package/dotenv)
 - [dotenv github](https://github.com/motdotla/dotenv?fbclid=IwAR2_hAbEX8rUPKqbcQi1z7QELvHMldEex6ZLQ3NKHNTYeCw1YH30zl_-BHk)
+
+Images:
+
 ![dotenv1](images/dotenv1.jpg)
+
 ![dotenv2](images/dotenv22.jpg)
+
 ![dotenv3](images/dotenv333.jpg)
 
 ## ORM
@@ -268,11 +196,17 @@ npm install --save-dev nodemon
 ## mysql
 
 - [mysql website](https://www.mysql.com/)
+
+Images:
+
 ![mysql](images/mysqlllllll.jpg)
 
 ## mysql2
 
 - [mysql2 npm](https://www.npmjs.com/package/mysql2)
+
+Images:
+
 ![mysql2](images/mysql2.jpg)
 
 ## Sequelize
@@ -286,9 +220,17 @@ npm install --save-dev nodemon
 - [Taking advantage of Models being classes](https://sequelize.org/docs/v6/core-concepts/model-basics/#taking-advantage-of-models-being-classes)
 - [Validations & Constraints](https://sequelize.org/docs/v6/core-concepts/validations-and-constraints/)
 - [belongstomany](https://sequelize.org/api/v6/class/src/associations/belongs-to-many.js~belongstomany)
+
+Images:
+
+![sequelize](images/seqqqqqqqqqq.jpg)
+
 ![sequelize 1](images/seq1.jpg)
+
 ![sequelize 2](images/seq2.jpg)
+
 ![sequelize 3](images/seq3.jpg)
+
 ![sequelize 4](images/seq4.jpg)
 
 ## MISC
@@ -309,15 +251,27 @@ npm install --save-dev nodemon
 
 - [bcrypt npm](https://www.npmjs.com/package/bcrypt)
 - [bcrypt github](https://github.com/kelektiv/node.bcrypt.js?fbclid=IwAR3_mtdkHV3l5mVP8NsXCn4MsbJxGUfZpug8luBF8XntU2FMX_xxRVJv2g8)
+
+Images:
+
 ![bcrypt1](images/bcrypt1.jpg)
+
 ![bcrypt2](images/b2.jpg)
+
 ![bcrypt3](images/b3.jpg)
+
 ![bcrypt4](images/b4.jpg)
+
 ![bcrypt5](images/b5.jpg)
+
 ![bcrypt6](images/b6.jpg)
+
 ![bcrypt7](images/b7.jpg)
+
 ![bcrypt8](images/b8.jpg)
+
 ![bcrypt9](images/b9.jpg)
+
 ![bcrypt10](images/b10.jpg)
 
 ## eslint
@@ -325,7 +279,11 @@ npm install --save-dev nodemon
 - [eslint npm](https://www.npmjs.com/package/eslint)
 - [eslint website](https://eslint.org/)
 - [eslint github](https://github.com/eslint/eslint?fbclid=IwAR189HwHLg5WM6CxjoNCKtXcjGEvLIBw6B7QSyrbduAX1qcAnnG-7-4duQc)
+
+Images:
+
 ![eslint1](images/eslint1.jpg)
+
 ![eslint2](images/eslint2.jpg)
 
 ## Homework I Followed
