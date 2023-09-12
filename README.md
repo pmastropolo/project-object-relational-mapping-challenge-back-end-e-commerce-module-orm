@@ -87,6 +87,12 @@ The seed file uses Sequelizes method '.bulkCreate()', to insert multiple records
 ![User Story](images/userstory.jpg)
 ![Tools For This Week](<images/TOOLS FOR THIS WEEK.jpg>)
 
+GIFS:
+
+![gif 1](images/13-orm-homework-demo-01.gif)
+![gif 2](images/13-orm-homework-demo-02.gif)
+![gif 3](images/13-orm-homework-demo-03.gif)
+
 ## Dependencies
 
 - Express.js
