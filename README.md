@@ -13,6 +13,9 @@
 - [Installation](#installation)
 - [Links](#links)
 - [School Instructions](#school-instructions)
+- [Dotenv](#dotenv)
+- [mysql2](#mysql2)
+- [sequelize](#sequelize)
 - [License](#license)
 - [How to Contribute](#how-to-contribute)
 - [Credits](#credits)
@@ -42,6 +45,21 @@
 
 ## School Instructions
 
+## dotenv
+
+- [dotenv npm](https://www.npmjs.com/package/dotenv)
+
+## mysql2
+
+- [mysql2 npm](https://www.npmjs.com/package/mysql2)
+
+## Sequelize
+
+- [sequelize npm](https://www.npmjs.com/package/sequelize)
+
+## MISC
+
+- [VIDEO SUBMISSION HELP](https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission-guide)
 
 ## License
 
