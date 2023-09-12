@@ -1,10 +1,9 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');    // Import Sequelize
+const sequelize = require('../config/connection');  // Import Connection 
 
-const sequelize = require('../config/connection');
+class ProductTag extends Model {}   // Define ProductTag Class
 
-class ProductTag extends Model {}
-
-ProductTag.init(
+ProductTag.init(                                    // Initialize ProductTag schema
   {
     // define columns
   },
@@ -12,9 +11,9 @@ ProductTag.init(
     sequelize,
     timestamps: false,
     freezeTableName: true,
-    underscored: true,
-    modelName: 'product_tag',
+    underscored: true,          // use underscores
+    modelName: 'product_tag',   // define name 
   }
 );
 
-module.exports = ProductTag;
+module.exports = ProductTag;    // Export

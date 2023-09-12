@@ -1,5 +1,6 @@
-const { Product } = require('../models');
+const { Product } = require('../models');   // IMPORT PRODUCT MODEL
 
+// ARRAY OF PRODUCT DATA 
 const productData = [
   {
     product_name: 'Plain T-Shirt',
@@ -33,6 +34,6 @@ const productData = [
   },
 ];
 
-const seedProducts = () => Product.bulkCreate(productData);
+const seedProducts = () => Product.bulkCreate(productData);   // FUNCTION PRODUCTS BULK CREATE
 
-module.exports = seedProducts;
+module.exports = seedProducts;    // EXPORT PRODUCTS

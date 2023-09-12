@@ -1,5 +1,6 @@
-const { Tag } = require('../models');
+const { Tag } = require('../models');   // IMPORT TAG MODEL
 
+// ARRAY OF DIFFERENT TAGS
 const tagData = [
   {
     tag_name: 'rock music',
@@ -11,7 +12,7 @@ const tagData = [
     tag_name: 'blue',
   },
   {
-    tag_name: 'red',
+    tag_name: 'red',01
   },
   {
     tag_name: 'green',
@@ -27,6 +28,6 @@ const tagData = [
   },
 ];
 
-const seedTags = () => Tag.bulkCreate(tagData);
+const seedTags = () => Tag.bulkCreate(tagData);   // FUNCTION BULK CREATE
 
-module.exports = seedTags;
+module.exports = seedTags;       // EXPORT FUNCTION47.              

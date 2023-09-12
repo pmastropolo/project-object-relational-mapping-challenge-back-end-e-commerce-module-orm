@@ -1,5 +1,7 @@
-const { Category } = require('../models');
+const { Category } = require('../models');    // IMPORT CATEGORY MODEL
 
+
+// ARRAY OF CATEGORY DATA
 const categoryData = [
   {
     category_name: 'Shirts',
@@ -18,6 +20,6 @@ const categoryData = [
   },
 ];
 
-const seedCategories = () => Category.bulkCreate(categoryData);
+const seedCategories = () => Category.bulkCreate(categoryData);   // FUNCTION CATEGORY BULK CREATE
 
-module.exports = seedCategories;
+module.exports = seedCategories;    // EXPORT CATEGORY
