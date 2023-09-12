@@ -24,7 +24,7 @@
 
 :arrow_down:
 
-:arrow_forward: [Github Link : Click Me To Go To Link]
+:arrow_forward: [Github Link : Click Me To Go To Link](https://github.com/pmastropolo/project-object-relational-mapping-challenge-back-end-e-commerce-module-orm/tree/main)
 
 :arrow_forward: [Youtube Video : Click Me To Go To Link]
 
@@ -32,7 +32,7 @@
 
 :open_file_folder:
 
-:arrow_forward: Github link: 
+:arrow_forward: Github link: https://github.com/pmastropolo/project-object-relational-mapping-challenge-back-end-e-commerce-module-orm/tree/main
 
 :arrow_forward: Youtube Video: 
 
