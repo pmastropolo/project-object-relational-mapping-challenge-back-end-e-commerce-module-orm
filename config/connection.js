@@ -1,16 +1,15 @@
-const Sequelize = require('sequelize'); // Import Sequelize
-require('dotenv').config(); // dotenv
+const Sequelize = require('sequelize');      // Import Sequelize library
+require('dotenv').config();                  // dotenv
 
-const sequelize = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-  process.env.DB_PASSWORD,
+const sequelize = new Sequelize(             // Initialize Sequelize
+  process.env.DB_NAME,                       // Database name
+  process.env.DB_USER,                       // Database user
+  process.env.DB_PASSWORD,                   // Database password
   {
-    host: 'localhost',
-    dialect: 'mysql',
-    port: 3306,
-    logging: console.log
+    host: 'localhost',                       // Database host
+    dialect: 'mysql',                        // Using MySQL dialect
+    port: 3306,                              // Port number
   }
 );
 
-module.exports = sequelize;
+module.exports = sequelize;                  // Export Sequelize instance
