@@ -5,7 +5,7 @@ const routes = require('./routes');     // import routes
 const sequelize = require('./config/connection');
 
 const app = express();  // Initialize an instance of Express.js
-const PORT = process.env.PORT || 9017;  // Set port to either system or default 9010
+const PORT = process.env.PORT || 9046;  // Set port to either system or default 9010
 
 // Middleware for parsing JSON and urlencoded form data
 app.use(express.json());

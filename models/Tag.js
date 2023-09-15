@@ -11,7 +11,7 @@ Tag.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
   },
 // Define the tag_name attribute/column
   tag_name: {

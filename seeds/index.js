@@ -2,7 +2,6 @@ const seedCategories = require('./category-seeds');       // CATEGORIES
 const seedProducts = require('./product-seeds');          // PRODUCTS
 const seedTags = require('./tag-seeds');                  // TAGS
 const seedProductTags = require('./product-tag-seeds');   // PRODUCT TAGS
-
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {

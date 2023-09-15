@@ -4,31 +4,39 @@ const { Category, Product } = require('../../models');           // Import Categ
 // The `/api/categories` endpoint
 
 // FIND/GET ALL CATEGORIES with associated Products
-router.get('/', async (req, res) => {                            // Define route to get all categories
-  try {                                                          // async code
-    const categoryData = await Category.findAll({                // Fetch all categories
-      include: [Product],                                        // Include Products
+router.get('/', async (req, res) => {
+  try {
+    const categoryData = await Category.findAll({
+      attributes: ['id', 'category_name'], 
+      include: [{
+        model: Product,
+        attributes: ['id', 'product_name', 'price', 'stock', 'category_id'] 
+      }]
     });
-    res.json(categoryData);                                      // Respond with fetched categories
-  } catch (err) {                                                // Handle errors
-    res.status(500).json(err);                                   // Send a 500 error on failure
+    res.json(categoryData);       // Respond with fetched categories
+  } catch (err) {                 // Handle errors
+    res.status(500).json(err);    // Send a 500 error on failure
   }
 });
 
-
 // GET CATEGORY BY ITS ID
-router.get('/:id', async (req, res) => {                                // Define route to get a category by ID
-  try {                                                               
-    const categoryData = await Category.findByPk(req.params.id, {        // Fetch category by primary key
-      include: [Product],                                               // Include associated Products
+router.get('/:id', async (req, res) => {       // Define route to get all categories
+  try {
+    const categoryData = await Category.findByPk(req.params.id, {
+      attributes: ['id', 'category_name'],     // Select specific attributes
+      include: [{   // Include associated products
+        model: Product,
+        attributes: ['id', 'product_name', 'price', 'stock', 'category_id'],
+        where: {} 
+      }]
     });
-    if (!categoryData) {                                         // Check if category was fetched
-      res.status(404).json({ message: 'No category found with this id!' }); // 404 if not found
-      return;                                                    // Exit function
+    if (!categoryData) {     // Check if category exists
+      res.status(404).json({ message: 'No category found with this id!' });
+      return;
     }
-    res.json(categoryData);                                      // Respond with fetched category
-  } catch (err) {                                                // Handle errors
-    res.status(500).json(err);                                   // Send a 500 error on failure
+    res.json(categoryData);   // send fetch catergory data
+  } catch (err) {
+    res.status(500).json(err);    // Handle errors with 500 status
   }
 });
 

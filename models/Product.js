@@ -21,6 +21,7 @@ Product.init(
     product_name: {
       type: DataTypes.STRING,                   // Set data type to STRING
       allowNull: false,                         // Cannot be null
+      defaultValue: "Default Product Name"
     },
 
     price: {

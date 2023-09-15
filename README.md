@@ -18,6 +18,9 @@ Users can easily fetch e-commerce data in a formatted JSON via GET routes for ca
 - [School Instructions](#school-instructions)
 - [Dependencies](#dependencies)
 - [Insomnia](#insomnia)
+- [Product](#product)
+- [Category](#category)
+- [Tag](#tag)
 - [Dotenv](#dotenv)
 - [ORM](#orm)
 - [mysql](#mysql)
@@ -61,7 +64,7 @@ The seed file uses Sequelizes method '.bulkCreate()', to insert multiple records
 
 :arrow_forward: [Github Link : Click Me To Go To Link](https://github.com/pmastropolo/project-object-relational-mapping-challenge-back-end-e-commerce-module-orm/tree/main)
 
-:arrow_forward: [Youtube Video : Click Me To Go To Link]
+:arrow_forward: [Youtube Video : Click Me To Go To Link](https://www.youtube.com/watch?v=hVpLeKTFeS4)
 
 ## Links
 
@@ -71,7 +74,7 @@ The seed file uses Sequelizes method '.bulkCreate()', to insert multiple records
 
 :arrow_forward: Github link: https://github.com/pmastropolo/project-object-relational-mapping-challenge-back-end-e-commerce-module-orm/tree/main
 
-:arrow_forward: Youtube Video:
+:arrow_forward: Youtube Video: https://www.youtube.com/watch?v=hVpLeKTFeS4
 
 ## School Instructions
 
@@ -124,7 +127,7 @@ Select the appropriate HTTP method (GET, POST, PUT, DELETE, etc.).
 Input your API endpoint URL.
 
 3. Sending Requests:
-For GET requests, simply click Send after inputting the URL.
+GET requests: simply click Send after inputting the URL. ('http://localhost:YOURPORTNUMBER')
 
 4. Viewing Responses:
 After sending a request,
@@ -138,6 +141,137 @@ Adjust HTTP method and input data as necessary for each endpoint.
 Images:
 
 ![Insomnia](images/insomnia.rest.jpg)
+
+## Product
+
+1. GET All PRODUCTS:
+Click New Request in Insomnia and add name
+Request type: GET
+URL: http://localhost:PORTNUMBER/products
+Click Send.
+Expected Response: A list of all products.
+
+2. GET A Specific Product By ID
+New request name: Get Product By ID
+Request type: GET
+URL: http://localhost:PORTNUMBER/products/id (Replace id with desired product id)
+Click Send.
+Expected Response: Details of the specified product.
+
+3. CREATE A New Product
+New request name: Create New Product
+Request type: POST
+URL: http://localhost:PORTNUMBER/products
+Body type: JSON
+Input:
+************
+Click Send.
+Expected Response: Confirmation of product creation.
+
+4. UPDATE An Existing Product
+New request name: Update Product
+Request type: PUT
+URL: http://localhost:PORTNUMBER/products/id (Replace id with product's id to update)
+Body type: JSON
+Input:
+**************
+Click Send.
+Expected Response: Confirmation of product update.
+
+5. DELETE A Product
+New request name: Delete Product
+Request type: DELETE
+URL: http://localhost:PORTNUMBER/products/id (Replace id with product's id to delete)
+Click Send.
+Expected Response: Confirmation of product deletion.
+
+## Category
+
+1. GET All Categories
+Click New Request in Insomnia.
+Name: Get All Categories
+Request type: GET
+URL: http://localhost:PORTNUMBER/categories
+Click Send.
+Expected Response: A list of all categories.
+
+2. GET A Specific Category By ID
+New request name: Get Category By ID
+Request type: GET
+URL: http://localhost:PORTNUMBER/categories/id (Replace id with desired category id)
+Click Send
+Expected Response: Details of the specified category
+
+3. CREATE A New Category
+New request name: Create New Category
+Request type: POST
+URL: http://localhost:PORTNUMBER/categories
+Body type: JSON
+Input:
+*************
+Click Send.
+Expected Response: Confirmation of category creation.
+
+4. UPDATE An Existing Category
+New request name: Update Category
+Request type: PUT
+URL: http://localhost:PORTNUMBER/categories/id (Replace id with category's id to update)
+Body type: JSON
+Input:
+***************
+Click Send.
+Expected Response: Confirmation of category update.
+
+5. DELETE A Category
+New request name: Delete Category
+Request type: DELETE
+URL: http://localhost:PORTNUMBER/categories/id (Replace id with category's id to delete)
+Click Send.
+Expected Response: Confirmation of category deletion.
+
+## Tag
+
+1. GET All Tags
+Click New Request in Insomnia.
+Name: Get All Tags
+Request type: GET
+URL: http://localhost:PORTNUMBER/tags
+Click Send.
+Expected Response: A list of all tags.
+
+2. GET A Specific Tag By ID
+New request name: Get Tag By id
+Request type: GET
+URL: http://localhost:PORTNUMBER/tags/id (Replace id with desired tag id)
+Click Send.
+Expected Response: Details of the specified tag.
+
+3. CREATE A New Tag
+New request name: Create New Tag
+Request type: POST
+URL: http://localhost:PORTNUMBER/tags
+Body type: JSON
+Input:
+******************
+Click Send.
+Expected Response: Confirmation of tag creation.
+
+4. UPDATE An Existing Tag
+New request name: Update Tag
+Request type: PUT
+URL: http://localhost:PORTNUMBER/tags/id (Replace id with tag's id to update)
+Body type: JSON
+Input:
+**************
+Click Send.
+Expected Response: Confirmation of tag update.
+
+5. DELETE A Tag
+New request name: Delete Tag
+Request type: DELETE
+URL: http://localhost:PORTNUMBER/tags/id (Replace id with tag's id to delete)
+Click Send.
+Expected Response: Confirmation of tag deletion.
 
 ## dotenv
 

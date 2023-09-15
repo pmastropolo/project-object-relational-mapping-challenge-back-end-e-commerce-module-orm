@@ -16,7 +16,8 @@ ProductTag.init(                                    // Initialize ProductTag sch
       type: DataTypes.INTEGER,                      // Data type: Integer
       references: {                                 // Define foreign key relationship
         model: 'product',                           // Connects to 'product' model
-        key: 'id',                                  // Using 'id' field
+        key: 'id'                                  // Using 'id' field
+      
       },
     },
 
@@ -24,7 +25,8 @@ ProductTag.init(                                    // Initialize ProductTag sch
       type: DataTypes.INTEGER,                      // Data type: Integer
       references: {                                 // Define foreign key relationship
         model: 'tag',                               // Connects to 'tag' model
-        key: 'id',                                  // Using 'id' field
+        key: 'id'                                  // Using 'id' field
+  
       },
     },
   },
